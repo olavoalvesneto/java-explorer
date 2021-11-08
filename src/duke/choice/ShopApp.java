@@ -16,29 +16,45 @@ public class ShopApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         Double tax = 0.2;
         Double total;
         Customer c1 = new Customer();
         c1.setName("Pink");
+        c1.setSize("S");
         System.out.println("Welcome to Duke Choice Shop " + c1.getName());
-        
+
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
-        
+
         item1.setDescription("Blue Jacket");
         item1.setPrice(20.9);
-        
+
         item2.setDescription("Orange T-Shirt");
         item2.setPrice(10.50);
         item2.setSize("S");
-        
+
         System.out.println("Item1 : " + item1.getDescription() + "," + item1.getPrice() + "," + item1.getSize());
         System.out.println("Item2 : " + item2.getDescription() + "," + item2.getPrice() + "," + item2.getSize());
-        
+
         total = ((item1.getPrice() + (item2.getPrice() * 2))) * (1 + tax);
         System.out.println("Total : " + total);
-        
+
+        int measurement = 3;
+
+        switch (measurement) {
+            case 1, 2, 3:
+                c1.setSize("S");
+                break;
+            case 4, 5, 6:
+                c1.setSize("M");
+                break;
+            case 7, 8, 9:
+                c1.setSize("L");
+                break;
+            default:
+                c1.setSize("X");
+        }
     }
-    
+
 }
