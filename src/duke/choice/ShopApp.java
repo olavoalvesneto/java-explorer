@@ -23,7 +23,7 @@ public class ShopApp {
         c1.setName("Pink");
         c1.setSize("S");
         System.out.println("Welcome to Duke Choice Shop " + c1.getName());
-
+        
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
@@ -33,28 +33,16 @@ public class ShopApp {
         item2.setDescription("Orange T-Shirt");
         item2.setPrice(10.50);
         item2.setSize("S");
+        
+        Clothing[] itens = {item1, item2};
 
-        System.out.println("Item1 : " + item1.getDescription() + "," + item1.getPrice() + "," + item1.getSize());
-        System.out.println("Item2 : " + item2.getDescription() + "," + item2.getPrice() + "," + item2.getSize());
+        System.out.println("Item1 : " + itens[0].getDescription() + "," + itens[0].getPrice() + "," + itens[0].getSize());
+        System.out.println("Item2 : " + itens[1].getDescription() + "," + itens[1].getPrice() + "," + itens[1].getSize());
 
         total = ((item1.getPrice() + (item2.getPrice() * 2))) * (1 + tax);
         System.out.println("Total : " + total);
 
         int measurement = 3;
-
-        switch (measurement) {
-            case 1, 2, 3:
-                c1.setSize("S");
-                break;
-            case 4, 5, 6:
-                c1.setSize("M");
-                break;
-            case 7, 8, 9:
-                c1.setSize("L");
-                break;
-            default:
-                c1.setSize("X");
-        }
     }
 
 }
