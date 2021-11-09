@@ -7,12 +7,28 @@ package duke.choice;
 
 /**
  *
- * @author opc
+ * @author Olavo Alves
  */
 public class Customer {
 
     private String name;
     private String size;
+
+    private Clothing[] items;
+
+    public void addItems(Clothing[] someItems) {
+        items = someItems;
+    }
+
+    public double getTotalClothingCost() {
+        double total = 0.0;
+
+        for (Clothing item : items) {
+            total += item.getPrice();
+        }
+
+        return total;
+    }
 
     public String getName() {
         return name;
@@ -46,4 +62,9 @@ public class Customer {
         }
 
     }
+
+    public Clothing[] getItems() {
+        return items;
+    }
+
 }

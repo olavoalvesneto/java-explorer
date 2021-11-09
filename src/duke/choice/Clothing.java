@@ -7,7 +7,7 @@ package duke.choice;
 
 /**
  *
- * @author opc
+ * @author Olavo Alves
  */
 public class Clothing {
    

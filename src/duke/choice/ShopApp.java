@@ -7,7 +7,7 @@ package duke.choice;
 
 /**
  *
- * @author opc
+ * @author Olavo Alves
  */
 public class ShopApp {
 
@@ -25,7 +25,6 @@ public class ShopApp {
         c1.setSize(measurement);
 
         System.out.println("Welcome to Duke Choice Shop ");
-        System.out.println("Customer is " + c1.getName() + " Size: " + c1.getSize());
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
@@ -47,18 +46,14 @@ public class ShopApp {
         item4.setPrice(10.50);
         item4.setSize("S");
 
-        Clothing[] itens = {item1, item2, item3, item4};
+        Clothing[] items = {item1, item2, item3, item4};
+        c1.addItems(items);
 
-        for (Clothing item : itens) {
-            if (c1.getSize().equals(item.getSize())) {
-                System.out.println("Item ," + item.getDescription() + "," + item.getPrice() + "," + item.getSize());
-                total += item.getPrice();
-                if (total > 15) {
-                    break;
-                }
-
-            }
+        System.out.println("Customer is " + c1.getName() + " Size: " + c1.getSize() + "," + c1.getTotalClothingCost());
+        
+        for (Clothing item : c1.getItems()) {
+            System.out.println("Items " + item.getDescription());
         }
-        System.out.println("Total : " + total);
+        
     }
 }
