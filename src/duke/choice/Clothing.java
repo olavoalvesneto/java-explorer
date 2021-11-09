@@ -10,11 +10,14 @@ package duke.choice;
  * @author opc
  */
 public class Clothing {
-    
+   
+   private final double MIN_PRICE = 10.0; 
+   private final double MIN_TAX = 0.2;
+   
    private String description;
-   private Double price;
+   private double price;
    private String size = "M";
-
+   
     public String getDescription() {
         return description;
     }
@@ -23,12 +26,14 @@ public class Clothing {
         this.description = description;
     }
 
-    public Double getPrice() {
-        return price;
+    public double getPrice() {
+        //Manipulating values within the getter is not a good practice, used here for teaching purposes    
+        return (price * (1 + MIN_TAX));
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setPrice(double price) {
+        //Manipulating values within the setter is not a good practice, used here for teaching purposes.
+        this.price = (price > MIN_PRICE) ? price : MIN_PRICE;
     }
 
     public String getSize() {
