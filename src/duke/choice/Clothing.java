@@ -11,19 +11,19 @@ package duke.choice;
  */
 public class Clothing {
    
-    public Clothing(String description, double price, String aSize) {
-        this.description = description;
-        this.price = price;
-        this.size = aSize;
-    }
-    
-    
-   private final double MIN_PRICE = 10.0; 
-   private final double MIN_TAX = 0.2;
+   public final static double MIN_PRICE = 10.0; 
+   public final static double TAX_RATE = 0.2;
    
    private String description;
    private double price;
    private String size = "M";
+   
+       public Clothing(String description, double price, String aSize) {
+        this.description = description;
+        this.price = price;
+        this.size = aSize;
+    }
+
    
     public String getDescription() {
         return description;
@@ -35,7 +35,7 @@ public class Clothing {
 
     public double getPrice() {
         //Manipulating values within the getter is not a good practice, used here for teaching purposes    
-        return (price * (1 + MIN_TAX));
+        return (price * (1 + TAX_RATE));
     }
 
     public void setPrice(double price) {
@@ -50,7 +50,5 @@ public class Clothing {
     public void setSize(String size) {
         this.size = size;
     }
-    
-   
     
 }
