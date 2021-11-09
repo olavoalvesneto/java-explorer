@@ -11,6 +11,13 @@ package duke.choice;
  */
 public class Clothing {
    
+    public Clothing(String description, double price, String aSize) {
+        this.description = description;
+        this.price = price;
+        this.size = aSize;
+    }
+    
+    
    private final double MIN_PRICE = 10.0; 
    private final double MIN_TAX = 0.2;
    

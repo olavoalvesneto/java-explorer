@@ -11,6 +11,11 @@ package duke.choice;
  */
 public class Customer {
 
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
+    }
+
     private String name;
     private String size;
 
