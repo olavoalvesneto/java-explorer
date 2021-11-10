@@ -17,11 +17,13 @@ public class ShopApp {
     public static void main(String[] args) {
 
         double total = 0.0;
+        int average = 0;
+        int count = 0;
 
         Customer c1 = new Customer("Pink", 3);
 
         System.out.println("Welcome to Duke Choice Shop ");
-        
+
         System.out.println("Min. Price: " + Clothing.MIN_PRICE);
 
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
@@ -33,10 +35,23 @@ public class ShopApp {
         c1.addItems(items);
 
         System.out.println("Customer is " + c1.getName() + " Size: " + c1.getSize() + "," + c1.getTotalClothingCost());
-        
+
         for (Clothing item : c1.getItems()) {
-            System.out.println("Items " + item.getDescription());
+            System.out.println("Items " + item);
         }
-        
+
+        for (Clothing item : c1.getItems()) {
+            if (item.getSize().equals("L")) {
+                count++;
+                average += item.getPrice();
+            }
+        }
+        try {
+            average = (count == 0) ? 0 : average/count;
+            System.out.println("Avergage price: " + average + ", Count " + count);
+        } catch (ArithmeticException e) {
+            System.out.println("Dont divide by zero");
+        }
+
     }
 }

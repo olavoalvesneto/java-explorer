@@ -50,5 +50,12 @@ public class Clothing {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return description + ", " + price + ", " + ", " + size;
+    }
+    
+    
     
 }
