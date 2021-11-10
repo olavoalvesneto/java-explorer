@@ -5,6 +5,8 @@
  */
 package duke.choice;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Olavo Alves
@@ -37,21 +39,21 @@ public class ShopApp {
         System.out.println("Customer is " + c1.getName() + " Size: " + c1.getSize() + "," + c1.getTotalClothingCost());
 
         for (Clothing item : c1.getItems()) {
-            System.out.println("Items " + item);
-        }
-
-        for (Clothing item : c1.getItems()) {
             if (item.getSize().equals("L")) {
                 count++;
                 average += item.getPrice();
             }
         }
         try {
-            average = (count == 0) ? 0 : average/count;
+            average = (count == 0) ? 0 : average / count;
             System.out.println("Avergage price: " + average + ", Count " + count);
         } catch (ArithmeticException e) {
             System.out.println("Dont divide by zero");
         }
 
+        Arrays.sort(c1.getItems());
+        for (Clothing item : c1.getItems()) {
+            System.out.println("Items " + item);
+        }
     }
 }
